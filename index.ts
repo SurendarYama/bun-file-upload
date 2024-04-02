@@ -19,7 +19,7 @@ const server = Bun.serve({
       if (!profilePicture) throw new Error("Must upload a profile picture.");
       // write profilePicture to disk
       if (profilePicture instanceof File) {
-        console.log(profilePicture.name);
+  
         await Bun.write(`./uploads/${profilePicture.name}`, profilePicture);
         return new Response("Success");
       }
